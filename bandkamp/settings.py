@@ -56,9 +56,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = [
-    "rest_framework",
-]
+THIRD_PARTY_APPS = ["rest_framework", "drf_spectacular"]
 
 MY_APPS = [
     "users",
@@ -144,6 +142,15 @@ REST_FRAMEWORK = {
         "rest_framework.pagination.PageNumberPagination"
     ),
     "PAGE_SIZE": 2,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Bandkamp",
+    "DESCRIPTION": (
+        "Database simples que permite a criação e manutenção de usuários, álbuns e músicas."
+    ),
+    "VERSION": "1.0.0",
 }
 
 # Internationalization
